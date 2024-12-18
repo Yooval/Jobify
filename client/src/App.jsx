@@ -70,15 +70,14 @@ const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        element: (
-          <DashboardLayout
-            isDarkThemeEnabled={isDarkThemeEnabled}
-            queryClient={queryClient}
-          />
-        ),
+        element: <DashboardLayout queryClient={queryClient} />,
         loader: dashboardLoader(queryClient),
         children: [
-          { index: true, element: <AddJob />, action: addJobAction },
+          {
+            index: true,
+            element: <AddJob />,
+            action: addJobAction(queryClient),
+          },
           {
             path: "stats",
             element: <Stats />,
@@ -117,7 +116,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
