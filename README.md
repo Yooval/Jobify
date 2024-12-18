@@ -4,7 +4,7 @@
 **Jobify** is a web application designed to help you stay organized and efficient in your job search. It allows you to keep track of all your job positions, their statuses (interview, declined, pending), and types (full-time, part-time, internship). 
 The website is built using Node.js(express) and React. The website is connected to a MongoDB database where all the users information is stored.
 
-- the app is available [here](https://jobify-xwcl.onrender.com/). give it a try!
+- ####the app is available [here](https://jobify-xwcl.onrender.com/). give it a try!####
 ### Client Side:
   
 - **Home Page**: Present the app. Here users can register and choose to log in.
