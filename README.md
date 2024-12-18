@@ -1,36 +1,34 @@
-
 ## Overview
 
-**Jobify** is a web application designed to help you stay organized and efficient in your job search. It allows you to keep track of all your job positions, their statuses (interview, declined, pending), and types (full-time, part-time, internship). 
-The website is built using Node.js(express) and React. The website is connected to a MongoDB database where all the users information is stored.
+**Jobify** is a web application designed to help you stay organized and efficient in your job search. It lets you keep track of all your job positions, their statuses (interview, declined, pending), and types (full-time, part-time, internship). 
+The website is built using Node.js (Express) and React, and it connects to a MongoDB database where all user information is stored.
 
- the app is available [here](https://jobify-xwcl.onrender.com/). give it a try! 
+- ### The app is available [here](https://jobify-xwcl.onrender.com/). Give it a try!
+
 ### Client Side:
-  
-- **Home Page**: Present the app. Here users can register and choose to log in.
-- **Login Page**: allow users to log in(with their credentials) and explore the app without logging. than, 5 pages are presented and users can navigate between them:
-- **Add Jobs**: Logged users can add new jobs here. provide position company location type status.
-- **All Jobs**: Each user can view applications(not logged user can view Admin applications). Logged users can update, delete their own. In adition, all users can Filter jobs by status, type, or keywords (e.g., searching for "goo" will show "Google"). Sort jobs by dates or alphabetically, in ascending or descending order. 
-- **Stats**: Get a visual overview of your job search progress, including the number of applications by status and type.
-- **Profile**: view/edit your details. 
-- **Admin(restricted to the admin)**: view how many users and applications are in the system.
-  
-Of course, the user can log out any time.
 
-### server Side:
-The server side is responsible for two main things
-- Saving the users data and present it in the requested pages.
-- Manage authentication and authorization for users requests from client side.
+- **Home Page**: Introduces the app. Here, users can register and choose to log in.
+- **Login Page**: Allows users to log in with their credentials or explore the app without logging in. Once logged in, five pages are available for navigation:
+  - **Add Jobs**: Logged-in users can add new jobs by providing position, company, location, type, and status.
+  - **All Jobs**: Each user can view their applications (non-logged-in users can view admin applications). Logged-in users can update or delete their own applications. Additionally, all users can filter jobs by status, type, or keywords (e.g., searching for "goo" will show "Google"). Jobs can be sorted by dates or alphabetically, in ascending or descending order.
+  - **Stats**: Get a visual overview of your job search progress, including the number of applications by status and type.
+  - **Profile**: View and edit your details.
+  - **Admin (restricted to the admin)**: View the total number of users and applications in the system.
+
+Users can log out at any time.
+
+### Server Side:
+The server side handles two main responsibilities:
+- Saving user data and presenting it on the requested pages.
+- Managing authentication and authorization for user requests from the client side.
 
 ### Tech & Tools:
-- React Router: used to allow easy navigation between pages and use loaders and actions after form submition.
-- React Query: used to simplifies data fetching, caching(data exist in cache for 5 minutes after after it fetched), and synchronization.
-- Axios: used to simplifies the process of making HTTP requests from web browsers. in App, axios defines a base URl to every request from the client and than we can add the suffix for routing it in the server side.
-- Cloudinary: Cloudinary is a cloud-based media management platform. In app, we upload pictures in the client side and when a user edit it's profile in the server side he can choose one.
+- **React Router**: Used to enable easy navigation between pages and handle loaders and actions after form submissions.
+- **React Query**: Simplifies data fetching, caching (data stays in the cache for 5 minutes after being fetched), and synchronization.
+- **Axios**: Simplifies the process of making HTTP requests from web browsers. In the app, Axios defines a base URL for every client request, allowing suffixes to route requests on the server side.
+- **Cloudinary**: A cloud-based media management platform. In the app, users upload pictures on the client side, and when editing profiles on the server side, they can choose one.
 
-- ### Installation:
-- the app is available [here](https://jobify-xwcl.onrender.com/). give it a try!
-- if you want to run it locally open the project and run in terminal **npm install** and **npm run dev**. you should see the app running on http://localhost:5173/  
-  
-
+### Installation:
+- The app is available [here](https://jobify-xwcl.onrender.com/). Give it a try!
+- To run it locally, open the project and run the following commands in your terminal: **npm install** and **npm run dev**. You should see the app running on http://localhost:5173/
 
