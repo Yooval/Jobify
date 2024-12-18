@@ -1,7 +1,7 @@
 import multer from "multer";
 import DataParser from "datauri/parser.js";
 import path from "path";
-
+// here we acces the pictures in cloudinary.
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 const parser = new DataParser();

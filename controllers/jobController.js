@@ -17,10 +17,12 @@ export const getAllJobs = async (req, res) => {
   }
 
   if (jobStatus && jobStatus !== "all") {
+    //apply jobStatus filter
     queryObject.jobStatus = jobStatus;
   }
 
   if (jobType && jobType !== "all") {
+    //apply jobType filter
     queryObject.jobType = jobType;
   }
 

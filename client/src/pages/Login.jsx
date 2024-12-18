@@ -12,8 +12,8 @@ export const action =
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
     try {
-      await customFetch.post("/auth/login", data);
-      queryClient.invalidateQueries();
+      await customFetch.post("/auth/login", data); // try to login in the backend
+      queryClient.invalidateQueries(); // afterlogin, data depends on the user session refetched.
       toast.success("Login successfull");
       return redirect("/dashboard");
     } catch (error) {
@@ -25,6 +25,7 @@ export const action =
 const Login = () => {
   const navigate = useNavigate();
   const loginDemoUser = async () => {
+    //explore the app without loged user.
     const data = {
       email: "test@test.com",
       password: "secret123",

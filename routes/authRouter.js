@@ -8,8 +8,9 @@ import rateLimiter from "express-rate-limit";
 const router = Router();
 
 const apiLimiter = rateLimiter({
+  // maximum of 5 requests per IP address within a 15-minute window
   windowMs: 15 * 60 * 1000,
-  max: 15,
+  max: 5,
   message: { msg: "IP rate limit exceeded, retry in 15 minutes." },
 });
 router.post("/register", apiLimiter, validateRegisterInput, register);

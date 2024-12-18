@@ -13,6 +13,7 @@ export const action =
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
     try {
+      // (handling submition form)try to add job using the backend to validate it.
       await customFetch.post("/jobs", data);
       queryClient.invalidateQueries(["jobs"]);
       toast.success("Job added successfully");

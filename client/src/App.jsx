@@ -38,6 +38,7 @@ export const checkDefaultTheme = () => {
 
 const isDarkThemeEnabled = checkDefaultTheme();
 
+// fetched data is reused for 5 minutes before being refetched when needed
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -55,12 +56,12 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />, // our index page in landing. when we will go to http://localhost:5173/ we will go to landing page.
-        action: addJobAction(queryClient),
+        action: addJobAction(queryClient), //This initializes a QueryClient instance for React Query
       },
       {
         path: "register",
         element: <Register />,
-        action: registerAction,
+        action: registerAction, // when submit form registerthe action will be used.
       },
       {
         path: "login",

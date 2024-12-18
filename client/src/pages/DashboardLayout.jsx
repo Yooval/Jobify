@@ -15,13 +15,15 @@ import { useQuery } from "@tanstack/react-query";
 // The main layout for the dashboard, providing context for sidebar, navbar, and page switching.
 
 const userQuery = {
-  queryKey: ["user"],
+  queryKey: ["user"], // Unique key for caching user data when needed.
   queryFn: async () => {
+    //get the user's data.
     const { data } = await customFetch.get("/users/current-user");
     return data;
   },
 };
 
+// The loader ensures user data is fetched before the dashboard page is rendered.
 export const loader = (queryClient) => async () => {
   try {
     return await queryClient.ensureQueryData(userQuery);
@@ -31,7 +33,7 @@ export const loader = (queryClient) => async () => {
 };
 
 const DashboardContext = createContext();
-
+// mostly displayment settings
 const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
   const { user } = useQuery(userQuery).data;
   const navigate = useNavigate();
@@ -60,7 +62,7 @@ const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
 
   customFetch.interceptors.response.use(
     (response) => {
-      return response;
+      return response; // checks for a 401 Unauthorized status from the API.
     },
     (error) => {
       if (error?.response?.status === 401) {

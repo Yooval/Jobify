@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const singleJobQuery = (id) => {
   return {
-    queryKey: ["job", id],
+    queryKey: ["job", id], // catch job by id
     queryFn: async () => {
       const { data } = await customFetch.get(`/jobs/${id}`);
       return data;
@@ -19,10 +19,11 @@ const singleJobQuery = (id) => {
 
 export const loader =
   (queryClient) =>
+  // params example: /dashboard/edit-job/:id
   async ({ params }) => {
     try {
-      await queryClient.ensureQueryData(singleJobQuery(params.id));
-      return params.id;
+      await queryClient.ensureQueryData(singleJobQuery(params.id)); // ensureQueryData means get from cache else fetch.
+      return params.id; // return the job we want to update
     } catch (error) {
       toast.error(error?.response?.data?.msg);
       return redirect("/dashboard/all-jobs");
@@ -34,6 +35,7 @@ export const action =
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
     try {
+      // try to actually update the job
       await customFetch.patch(`/jobs/${params.id}`, data);
       queryClient.invalidateQueries(["jobs"]);
       toast.success("Job edited successfully");

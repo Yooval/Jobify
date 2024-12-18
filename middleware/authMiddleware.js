@@ -11,7 +11,7 @@ export const authenticateUser = (req, res, next) => {
 
   try {
     const { userId, role } = verifyJWT(token);
-    const testUser = userId === "675c649f67e14ee52965f9f7";
+    const testUser = userId === "675c649f67e14ee52965f9f7"; // to indentify users that didnt log in.
     req.user = { userId, role, testUser };
     next();
   } catch (error) {
@@ -29,6 +29,7 @@ export const authorizePermissions = (...roles) => {
 };
 
 export const checkForTestUser = (req, res, next) => {
+  // Check if user is a test user(didnt log in).
   if (req.user.testUser) throw new BadRequestError("Demo User. Read Only!");
   next();
 };

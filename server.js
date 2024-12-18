@@ -40,11 +40,12 @@ app.use(express.json());
 app.use(helmet());
 app.use(MongSanitize());
 
-app.use("/api/v1/jobs", authenticateUser, jobRouter);
+app.use("/api/v1/jobs", authenticateUser, jobRouter); // this is for using only server side
 app.use("/api/v1/users", authenticateUser, userRouter);
 app.use("/api/v1/auth", authRouter);
 
 app.get("*", (req, res) => {
+  // when request is coming from client
   res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));
 });
 

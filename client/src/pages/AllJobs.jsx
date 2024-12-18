@@ -18,7 +18,7 @@ const allJobsQuery = (params) => {
     ],
     queryFn: async () => {
       const { data } = await customFetch.get("/jobs", {
-        params,
+        params, // get the jobs according to params
       });
       return data;
     },
@@ -31,7 +31,7 @@ export const loader =
     const params = Object.fromEntries([
       ...new URL(request.url).searchParams.entries(),
     ]);
-
+    //get params
     await queryClient.ensureQueryData(allJobsQuery(params));
     return { searchValues: { ...params } };
   };
@@ -40,7 +40,7 @@ const AllJobsContext = createContext();
 const AllJobs = () => {
   const { searchValues } = useLoaderData();
   const { data } = useQuery(allJobsQuery(searchValues));
-  console.log(data);
+  console.log(data); // all jobs of the logged user.
   return (
     <AllJobsContext.Provider value={{ data, searchValues }}>
       <SearchContainer />

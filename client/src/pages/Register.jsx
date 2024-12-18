@@ -5,11 +5,12 @@ import customFetch from "../utils/customFetch";
 import { toast } from "react-toastify";
 // The registration page for new users to sign up, using reusable form fields.
 
+// using React Router's action when
 export const action = async ({ request }) => {
   const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const data = Object.fromEntries(formData); //get the data the user entered to register
   try {
-    await customFetch.post("/auth/register", data);
+    await customFetch.post("/auth/register", data); // try to register with that data
     toast.success("Registration successfull");
     return redirect("/login");
   } catch (error) {
@@ -17,6 +18,7 @@ export const action = async ({ request }) => {
     return error;
   }
 };
+
 const Register = () => {
   return (
     <Wrapper>
