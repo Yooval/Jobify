@@ -1,4 +1,6 @@
 
+## Overview
+
 **Jobify** is a web application designed to help you stay organized and efficient in your job search. It allows you to keep track of all your job positions, their statuses (interview, declined, pending), and types (full-time, part-time, internship). With Jobify, managing your job applications has never been easier!
 
 ### Features:
