@@ -15,7 +15,7 @@ The website is built using Node.js (Express) and React, and it connects to a Mon
   - **Profile**: View and edit your details.
   - **Admin (restricted to the admin)**: View the total number of users and applications in the system.
 
-Users can log out at any time.
+Users can log out at any time and choose between dark and bright displayment.
 
 ### Server Side:
 The server side handles two main responsibilities:
