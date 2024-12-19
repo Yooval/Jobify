@@ -30,5 +30,5 @@ The server side handles two main responsibilities:
 
 ### Installation:
 - The app is available [here](https://jobify-xwcl.onrender.com/). Give it a try!
-- To run it locally, open the project and run the following commands in your terminal: **npm install** and **npm run dev**. You should see the app running on http://localhost:5173/
+- To run it locally, open the project and run the following commands in your terminal: **npm install** and **npm run dev**. You should see the app running on http://localhost:5100/
 
