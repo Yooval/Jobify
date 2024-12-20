@@ -12,7 +12,7 @@ The website is built using Node.js (Express) and React, and it connects to a Mon
   - **Add Jobs**: Logged-in users can add new jobs by providing position, company, location, type, and status.
   - **All Jobs**: Each user can view their applications (non-logged-in users can view admin applications). Logged-in users can update or delete their own applications. Additionally, all users can filter jobs by status, type, or keywords (e.g., searching for "goo" will show "Google"). Jobs can be sorted by dates or alphabetically, in ascending or descending order.
   - **Stats**: Get a visual overview of your job search progress, including the number of applications by status and type.
-  - **Profile(exist only for logged users)**: View and edit your details.
+  - **Profile(Non-logged users have default one)**: View and edit your details.
   - **Admin (restricted to the admin)**: View the total number of users and applications in the system.
 
 Users can log out at any time and choose between dark and bright displayment.
