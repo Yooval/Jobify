@@ -4,7 +4,7 @@
 The website is built using Node.js (Express) and React, and it connects to a MongoDB database where all user information is stored.
 
 - ### The app is available [here](https://jobify-xwcl.onrender.com/). Give it a try!
-- ### View demonstration [here]()
+- ### View demonstration [here](https://drive.google.com/file/d/1YCjwdyi9JOMRfQcEgqMEME3xx67_8NFZ/view)
 
 ### Client Side:
 
