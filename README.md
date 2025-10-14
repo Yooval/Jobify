@@ -45,3 +45,5 @@ npm run dev
 That's it! The app will open at `http://localhost:5100/`
 
 **Note**: Requires Node.js, MongoDB connection, and environment variables setup (.env file)
+
+---
