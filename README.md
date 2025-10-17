@@ -1,6 +1,6 @@
 # Jobify - Job Search Application
 
-## 🚀 [Live Demo](https://jobify-xwcl.onrender.com/) | [Video Demo](https://drive.google.com/file/d/1YCjwdyi9JOMRfQcEgqMEME3xx67_8NFZ/view)
+## 🚀 [Live Demo](https://jobify-xwcl.onrender.com/) | [Video Demo](https://drive.google.com/file/d/1CUoqvHhXjliVh9SevPwHuIEG9a_qOYN5/view?usp=drive_link)
 
 A full-stack job tracking application with real-time statistics dashboard. Built with **Node.js, React, and MongoDB**. Features JWT authentication, role-based access control, and optimized database performance (40% faster response time).
 
